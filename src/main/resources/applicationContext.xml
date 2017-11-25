@@ -20,13 +20,13 @@
         <property name="name" value="dog" />
     </bean>
 
-    <bean id="elephant" class="Elephant" autowire="byType">
-        <property name="name" value="elephant" />
-    </bean>
+    <!--<bean id="elephant" class="Elephant" autowire="byType">-->
+        <!--<property name="name" value="elephant" />-->
+    <!--</bean>-->
 
-    <bean id="frog" class="Frog" autowire="constructor">
-        <property name="name" value="frog" />
-    </bean>
+    <!--<bean id="frog" class="Frog" autowire="constructor">-->
+        <!--<property name="name" value="frog" />-->
+    <!--</bean>-->
 
     <!--<bean id="anotherColor" class="Color">-->
         <!--<property name="baseColor" value="yellow" />-->
