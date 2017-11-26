@@ -3,7 +3,6 @@
 public class Cat {
 
     private String name;
-
     private Color color;
 
     public String getName() {
@@ -25,6 +24,5 @@ public class Cat {
     @Override
     public String toString() {
         return "The " + name + " has " + color.toString();
-
     }
 }

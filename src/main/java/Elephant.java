@@ -1,9 +1,11 @@
 // package com.javacodegeeks.snippets.enterprise;
 
+// Auto-Wiring ‘byType’
+// The Elephant.java class will be used to wire the color bean with auto-wiring byType mode.
+
 public class Elephant {
 
     private String name;
-
     private Color color;
 
     public String getName() {

@@ -1,8 +1,10 @@
 // package com.javacodegeeks.snippets.enterprise;
 
+// Auto-Wiring ‘constructor’
+// The Frog.java class is used to wire the color bean with this mode.
+
 public class Frog {
     private String name;
-
     private Color color;
 
     public Frog(Color color){
@@ -28,6 +30,5 @@ public class Frog {
     @Override
     public String toString() {
         return "The " + name + " has " + color.toString();
-
     }
 }

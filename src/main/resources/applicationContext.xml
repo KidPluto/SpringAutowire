@@ -10,23 +10,38 @@
         <property name="baseColor" value="white"/>
         <property name="textureColor" value="grey"/>
     </bean>
-
+    <!--
+    Auto-Wiring 'no'  This is the default mode.
+    The only thing needed here is to wire your bean via the ref attribute in the bean definition.
+    Cat.java is the bean that will be used to wire the color bean with the auto-wiring 'no' mode.
+    -->
     <bean id="cat" class="Cat">
         <property name="name" value="cat"/>
         <property name="color" ref="color"/>
     </bean>
-
+    <!--
+    Auto-Wiring ‘byName’
+    We are using the Dog.java class to wire the color bean in the auto-wiring byName mode.
+    -->
     <bean id="dog" class="Dog" autowire="byName">
         <property name="name" value="dog" />
     </bean>
 
-    <!--<bean id="elephant" class="Elephant" autowire="byType">-->
-        <!--<property name="name" value="elephant" />-->
-    <!--</bean>-->
-
-    <!--<bean id="frog" class="Frog" autowire="constructor">-->
-        <!--<property name="name" value="frog" />-->
-    <!--</bean>-->
+    <!--
+    Auto-Wiring ‘byType’
+    The Elephant.java class will be used to wire the color bean with auto-wiring byType mode.
+    -->
+    <bean id="elephant" class="Elephant" autowire="byType">
+        <property name="name" value="elephant" />
+    </bean>
+    <!--
+    Auto-Wiring `constructor'
+    Note that this mode is similar to just defining the color bean reference using the
+    constructor-arg element in the frog bean definition.
+    -->
+    <bean id="frog" class="Frog" autowire="constructor">
+        <property name="name" value="frog" />
+    </bean>
 
     <!--<bean id="anotherColor" class="Color">-->
         <!--<property name="baseColor" value="yellow" />-->

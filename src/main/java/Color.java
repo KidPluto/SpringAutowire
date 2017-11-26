@@ -1,5 +1,10 @@
 //    package com.javacodegeeks.snippets.enterprise;
 
+// Color.java will be the bean that we will use to autowire in all possible ways.
+// It is a class that represents the color of an animal. It has two attributes,
+// the baseColor that is the base color of an animal’s skin and the textureColor
+// that is the texture color of an animal’s skin.
+
 public class Color {
 
     private String baseColor;
@@ -24,7 +29,6 @@ public class Color {
     @Override
     public String toString() {
         return baseColor + " base skin color and " + textureColor + " texture color.";
-
     }
 }
 
