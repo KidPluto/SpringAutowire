@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 // 1. Setter
 // 2. Ctor
 // 3. Field
+// 4. required=false
+// 5. Using differentColors
 
 public class Tiger {
 
@@ -19,12 +21,14 @@ public class Tiger {
 //    @Qualifier("anotherColor")
 
     // Worked @Autowired
+    // @Autowired(required=false)
+    @Qualifier("differentColors")
     private Color color;
 
     // Had to add this, to get past an error.
     public Tiger(){};
 
-    @Autowired
+    // Worked @Autowired
 	public Tiger(Color color) {
 		this.color = color;
 	}

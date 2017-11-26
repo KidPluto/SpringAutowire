@@ -32,9 +32,9 @@
     Auto-Wiring ‘byType’
     The Elephant.java class will be used to wire the color bean with auto-wiring byType mode.
     -->
-    <bean id="elephant" class="Elephant" autowire="byType">
-        <property name="name" value="elephant" />
-    </bean>
+    <!--<bean id="elephant" class="Elephant" autowire="byType">-->
+        <!--<property name="name" value="elephant" />-->
+    <!--</bean>-->
 
     <!--
     Auto-Wiring `constructor'
@@ -56,9 +56,9 @@
     <bean id="tiger" class="Tiger">
         <property name="name" value="tiger" />
     </bean>
-
-    <!--<bean id="anotherColor" class="Color">-->
-        <!--<property name="baseColor" value="yellow" />-->
-        <!--<property name="textureColor" value="black" />-->
-    <!--</bean>-->
+    <!-- Config for Elephant needs to be commented, for this to work. -->
+    <bean id="differentColors" class="Color">
+        <property name="baseColor" value="yellow" />
+        <property name="textureColor" value="black" />
+    </bean>
 </beans>

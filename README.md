@@ -72,6 +72,11 @@ Had to add default ctor to Tiger class.
     private Color color;
 ````
 * Dependency checking
+By default, the @Autowired annotation will perform the dependency checking to make sure the property has been wired properly. But if there is no matching bean to wire, Spring will throw an exception. To avoid this exception we can disable this checking feature by setting the required attribute of @Autowired to false. In that case, if Spring does not find a matching bean, it will leave the property unset.
+````java
+	@Autowired(required=false)
+	private Color color;
+````
 * @Qualifier annotation
 
 
