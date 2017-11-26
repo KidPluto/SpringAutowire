@@ -2,7 +2,10 @@
 
 The easiest way to autowire a bean is by using the @Autowire annotation, to avoid the xml configuration. It can be used to autowire a bean on the setter method, on a constructor or a field.
 
+Using this as a starting point
 https://examples.javacodegeeks.com/enterprise-java/spring/beans-spring/spring-autowire-example/
+
+## Auto-Wiring using applicationContext.xml
 
 **Color.java** will be the **bean** that we will use to **autowire** in all possible ways. It is a class that represents the color of an animal. It has two attributes, the **baseColor** and **textureColoe**.
 
@@ -46,5 +49,29 @@ https://examples.javacodegeeks.com/enterprise-java/spring/beans-spring/spring-au
     }
 ````
 ## Auto-Wiring with @Autowired annotation
+
+Had to add default ctor to Tiger class.
+
+* Setter method
+````java
+    @Autowired
+    public void setColor(Color color) {
+        this.color = color;
+    }
+````
+* Constructor
+````java
+    @Autowired
+    public Tiger(Color color) {
+        this.color = color;
+    }
+````
+* Field
+````java
+    @Autowired
+    private Color color;
+````
+* Dependency checking
+* @Qualifier annotation
 
 

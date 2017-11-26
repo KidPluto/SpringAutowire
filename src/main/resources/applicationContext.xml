@@ -6,6 +6,7 @@
        xmlns:task="http://www.springframework.org/schema/task"
        xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd">
 
+
     <bean id="color" class="Color">
         <property name="baseColor" value="white"/>
         <property name="textureColor" value="grey"/>
@@ -34,6 +35,7 @@
     <bean id="elephant" class="Elephant" autowire="byType">
         <property name="name" value="elephant" />
     </bean>
+
     <!--
     Auto-Wiring `constructor'
     Note that this mode is similar to just defining the color bean reference using the
@@ -41,6 +43,18 @@
     -->
     <bean id="frog" class="Frog" autowire="constructor">
         <property name="name" value="frog" />
+    </bean>
+    <!-- ============================================== -->
+    <!--
+    Two ways of enabling autowiring annotation
+    -->
+    <!-- #1 -->
+    <!-- <context:annotation-config /> -->
+    <!-- #2 -->
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+
+    <bean id="tiger" class="Tiger">
+        <property name="name" value="tiger" />
     </bean>
 
     <!--<bean id="anotherColor" class="Color">-->

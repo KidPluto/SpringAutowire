@@ -18,8 +18,8 @@ public class Driver {
         System.out.println(elephant.toString());
         Frog frog = (Frog) context.getBean("frog");
         System.out.println(frog.toString());
-//        Tiger tiger = (Tiger) context.getBean("tiger");
-//        System.out.println(tiger.toString());
+        Tiger tiger = (Tiger) context.getBean("tiger");
+        System.out.println(tiger.toString());
         context.close();
     }
 }
