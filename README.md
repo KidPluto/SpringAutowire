@@ -50,33 +50,38 @@ https://examples.javacodegeeks.com/enterprise-java/spring/beans-spring/spring-au
 ````
 ## Auto-Wiring with @Autowired annotation
 
-Had to add default ctor to Tiger class.
+All code below from the Tiger class.  Had to add default ctor to Tiger class.
 
-* Setter method
+* Setter method - example 1
 ````java
     @Autowired
     public void setColor(Color color) {
         this.color = color;
     }
 ````
-* Constructor
+* Constructor - example 2
 ````java
     @Autowired
     public Tiger(Color color) {
         this.color = color;
     }
 ````
-* Field
+* Field - example 3
 ````java
     @Autowired
     private Color color;
 ````
-* Dependency checking
-By default, the @Autowired annotation will perform the dependency checking to make sure the property has been wired properly. But if there is no matching bean to wire, Spring will throw an exception. To avoid this exception we can disable this checking feature by setting the required attribute of @Autowired to false. In that case, if Spring does not find a matching bean, it will leave the property unset.
-````java
-	@Autowired(required=false)
-	private Color color;
+* Dependency checking (skipping this one for now)
+
+* @Qualifier annotation - not working, colors not changing
+````xml
+    <bean id="differentColors" class="Color">
+        <property name="baseColor" value="yellow" />
+        <property name="textureColor" value="black" />
+    </bean>
 ````
-* @Qualifier annotation
-
-
+````java
+    @Autowired
+    @Qualifier("differentColors")
+    private Color color;
+````

@@ -6,29 +6,30 @@ import org.springframework.beans.factory.annotation.Qualifier;
 // Auto-Wiring with @Autowired annotation
 // The @Autowired annotation can be used to auto wire a bean on the setter method,
 // constructor or a field.
-
 // 1. Setter
 // 2. Ctor
 // 3. Field
 // 4. required=false
-// 5. Using differentColors
+// 5. How to set different colors.
 
 public class Tiger {
 
     private String name;
 
-//    @Autowired(required=false)
-//    @Qualifier("anotherColor")
-
-    // Worked @Autowired
-    // @Autowired(required=false)
+    // 5. - not working, prints default colors
+    @Autowired
     @Qualifier("differentColors")
     private Color color;
+
+//    // 3. Field - worked
+//    // @Autowired
+//    private Color color;
 
     // Had to add this, to get past an error.
     public Tiger(){};
 
-    // Worked @Autowired
+    // 2. Ctor - worked
+    // @Autowired
 	public Tiger(Color color) {
 		this.color = color;
 	}
@@ -44,10 +45,13 @@ public class Tiger {
     public Color getColor() {
         return color;
     }
-    // worked @Autowired
+
+    // 1. Setter - worked
+    // @Autowired
     public void setColor(Color color) {
         this.color = color;
     }
+
     @Override
     public String toString() {
         return "The " + name + " has " + color.toString();
