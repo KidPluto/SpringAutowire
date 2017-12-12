@@ -16,9 +16,9 @@ public class Tiger {
 
     private String name;
 
-    // 5. - not working, prints default colors
+    // 5. - not working, prints DEFAULT colors
     @Autowired
-    @Qualifier("differentColors")
+    @Qualifier("differentColors_2")
     private Color color;
 
 //    // 3. Field - worked
@@ -26,7 +26,7 @@ public class Tiger {
 //    private Color color;
 
     // Had to add this, to get past an error.
-    public Tiger(){};
+    public Tiger(){}
 
     // 2. Ctor - worked
     // @Autowired
