@@ -10,15 +10,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 // 2. Ctor
 // 3. Field
 // 4. required=false
-// 5. How to set different colors.
+// 5. How to set different colors, by using a different bean for Color
 
 public class Tiger {
 
     private String name;
 
-    // 5. - not working, prints DEFAULT colors
+    // 5. - NOT WORKING, prints default colors
     @Autowired
-    @Qualifier("differentColors_2")
+    @Qualifier("differentColors")
     private Color color;
 
 //    // 3. Field - worked

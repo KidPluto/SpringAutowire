@@ -3,21 +3,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-    <!-- A second use of the Color class, setting different colors -->
-    <!-- Shows how @Qualifier annotation works, in Tiger class -->
-    <bean id="differentColors" class="Color">
-        <property name="baseColor" value="yellow" />
-        <property name="textureColor" value="black" />
-    </bean>
-
-    <bean id="differentColors_2" class="Color">
-        <property name="baseColor" value="yellow" />
-        <property name="textureColor" value="black" />
-    </bean>
-
     <bean id="color" class="Color">
         <property name="baseColor" value="white"/>
         <property name="textureColor" value="grey"/>
+    </bean>
+    <!-- A second use of the Color class, setting different colors -->
+    <!-- Shows how @Qualifier annotation works, in Tiger class -->
+    <!-- This is NOT working, it is not being invoked/injected by the Tiger class -->
+    <bean id="differentColors" class="Color">
+        <property name="baseColor" value="yellow" />
+        <property name="textureColor" value="black" />
     </bean>
     <!--
     Auto-Wiring 'no'  This is the default mode.
@@ -31,6 +26,8 @@
     <!--
     Auto-Wiring ‘byName’
     We are using the Dog.java class to wire the color bean in the auto-wiring byName mode.
+
+    Getting warning "Unnecessary use of autowired dependencies"
     -->
     <bean id="dog" class="Dog" autowire="byName">
         <property name="name" value="dog" />
@@ -47,6 +44,8 @@
     Auto-Wiring `constructor'
     Note that this mode is similar to just defining the color bean reference using the
     constructor-arg element in the frog bean definition.
+
+    Getting warning "Unnecessary use of autowired dependencies"
     -->
     <bean id="frog" class="Frog" autowire="constructor">
         <property name="name" value="frog" />
