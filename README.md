@@ -71,7 +71,7 @@ All code below from the Tiger class.  Had to add default ctor to Tiger class.
 * Dependency checking (skipping this one for now)
 
 * @Qualifier annotation 
-  * This example is not **working**, the colors are not changing.  The Qaulifier annotation is not successfully having the new bean injected.
+  
 ````xml
     <bean id="differentColors" class="Color">
         <property name="baseColor" value="yellow" />

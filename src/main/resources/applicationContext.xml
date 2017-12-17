@@ -1,7 +1,32 @@
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-3.2.xsd
+       http://www.springframework.org/schema/jee
+       http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+<!--
+  Removed from original.  Was working, but IDE was showing errors.
+
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+-->
 
     <bean id="color" class="Color">
         <property name="baseColor" value="white"/>
@@ -9,7 +34,6 @@
     </bean>
     <!-- A second use of the Color class, setting different colors -->
     <!-- Shows how @Qualifier annotation works, in Tiger class -->
-    <!-- This is NOT working, it is not being invoked/injected by the Tiger class -->
     <bean id="differentColors" class="Color">
         <property name="baseColor" value="yellow" />
         <property name="textureColor" value="black" />
@@ -52,12 +76,12 @@
     </bean>
     <!-- ============================================== -->
     <!--
-    Two ways of enabling autowiring annotation, using #2.
+    Two ways of enabling autowiring annotation.  Method #2 didn't work for me.
     -->
     <!-- #1 -->
-    <!-- <context:annotation-config /> -->
+    <context:annotation-config />
     <!-- #2 -->
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+    <!--<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />-->
 
     <bean id="tiger" class="Tiger">
         <property name="name" value="tiger" />
