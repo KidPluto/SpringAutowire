@@ -16,7 +16,7 @@ public class Tiger {
 
     private String name;
 
-    // 5. - NOT WORKING, prints default colors
+    // 5. Works
     @Autowired
     @Qualifier("differentColors")
     private Color color;
